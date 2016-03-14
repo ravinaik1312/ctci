@@ -1,4 +1,4 @@
-package org.ctci.java8.chapter2;
+package org.ctci.java8.chapter1test;
 
 import static org.junit.Assert.*;
 
