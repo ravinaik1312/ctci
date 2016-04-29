@@ -5,45 +5,48 @@ public class LinkedListNode {
 	public LinkedListNode prev;
 	public LinkedListNode last;
 	public int data;
-	public LinkedListNode(int d, LinkedListNode n, LinkedListNode p) {
-		data = d;
-		setNext(n);
-		setPrevious(p);
-	}
-	
-	public LinkedListNode() { }
 
-	public void setNext(LinkedListNode n) {
-		next = n;
-		if (this == last) {
-			last = n;
+	public LinkedListNode(final int d, final LinkedListNode n, final LinkedListNode p) {
+		this.data = d;
+		this.setNext(n);
+		this.setPrevious(p);
+	}
+
+	public LinkedListNode() {
+	}
+
+	public void setNext(final LinkedListNode n) {
+		this.next = n;
+		if (this == this.last) {
+			this.last = n;
 		}
 		if (n != null && n.prev != this) {
 			n.setPrevious(this);
 		}
 	}
-	
-	public void setPrevious(LinkedListNode p) {
-		prev = p;
+
+	public void setPrevious(final LinkedListNode p) {
+		this.prev = p;
 		if (p != null && p.next != this) {
 			p.setNext(this);
 		}
-	}	
-	
+	}
+
 	public String printForward() {
-		if (next != null) {
-			return data + "->" + next.printForward();
+		if (this.next != null) {
+			return this.data + "->" + this.next.printForward();
 		} else {
-			return ((Integer) data).toString();
+			return ((Integer) this.data).toString();
 		}
 	}
-	
+
+	@Override
 	public LinkedListNode clone() {
 		LinkedListNode next2 = null;
-		if (next != null) {
-			next2 = next.clone();
+		if (this.next != null) {
+			next2 = this.next.clone();
 		}
-		LinkedListNode head2 = new LinkedListNode(data, next2, null);
+		final LinkedListNode head2 = new LinkedListNode(this.data, next2, null);
 		return head2;
 	}
 }
