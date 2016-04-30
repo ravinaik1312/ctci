@@ -10,7 +10,7 @@
  */
 package org.ctci.java8.chapter1;
 
-public class NonDuplicationDigitInArray {
+public class NonDuplicatedDigitInArray {
 
 	/**
 	 * this function finds the non duplication digit in an array. Checking the credibility of the XOR solution. If you XOR the result with

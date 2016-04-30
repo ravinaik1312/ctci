@@ -12,12 +12,12 @@ package org.ctci.java8.chapter1test;
 
 import static org.junit.Assert.assertEquals;
 
-import org.ctci.java8.chapter1.NonDuplicationDigitInArray;
+import org.ctci.java8.chapter1.NonDuplicatedDigitInArray;
 import org.junit.Test;
 
-public class NonDuplicationDigitInArrayTest {
+public class NonDuplicatedDigitInArrayTest {
 
-	NonDuplicationDigitInArray obj = new NonDuplicationDigitInArray();
+	NonDuplicatedDigitInArray obj = new NonDuplicatedDigitInArray();
 
 	@Test
 	public void test() {
