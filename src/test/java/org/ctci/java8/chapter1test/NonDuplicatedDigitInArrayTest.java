@@ -1,9 +1,10 @@
 package org.ctci.java8.chapter1test;
 
-iimport static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 import org.ctci.java8.chapter1.NonDuplicatedDigitInArray;
 import org.junit.Test;
+
 public class NonDuplicatedDigitInArrayTest {
 
 	NonDuplicatedDigitInArray obj = new NonDuplicatedDigitInArray();
