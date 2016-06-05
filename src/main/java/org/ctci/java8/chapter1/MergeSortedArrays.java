@@ -13,8 +13,7 @@ public class MergeSortedArrays {
 			if (array1[i] <= array2[j]) {
 				resultArray[k] = array1[i];
 				i++;
-			}
-			else {
+			} else {
 				resultArray[k] = array2[j];
 				j++;
 			}
@@ -29,5 +28,37 @@ public class MergeSortedArrays {
 
 		return resultArray;
 
+	}
+
+	public int[] mergeSortedArraysWithBuffer(final int[] array1WithBuffer, final int array[]) {
+		int lastIndex = array1WithBuffer.length - 1;
+		int aIndex = array1WithBuffer.length - array.length - 1;
+		int bIndex = array.length - 1;
+
+		while ((aIndex >= 0) && (bIndex >= 0)) {
+			if (array1WithBuffer[aIndex] > array[bIndex]) {
+				array1WithBuffer[lastIndex] = array1WithBuffer[aIndex];
+				aIndex--;
+				lastIndex--;
+			} else {
+				array1WithBuffer[lastIndex] = array[bIndex];
+				bIndex--;
+				lastIndex--;
+			}
+		}
+
+		if (aIndex >= 0) {
+			for (int i = aIndex; i >= 0; --i) {
+				array1WithBuffer[lastIndex] = array1WithBuffer[i];
+				lastIndex--;
+			}
+		} else if (bIndex >= 0) {
+			for (int i = bIndex; i >= 0; --i) {
+				array1WithBuffer[lastIndex] = array[i];
+				lastIndex--;
+			}
+		}
+
+		return array1WithBuffer;
 	}
 }

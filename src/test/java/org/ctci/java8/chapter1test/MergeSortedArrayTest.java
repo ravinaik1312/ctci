@@ -20,4 +20,16 @@ public class MergeSortedArrayTest {
 		assertTrue(Arrays.equals(returnedArray2, new int[] { 17, 23, 24, 46 }));
 		assertTrue(Arrays.equals(returnedArray3, new int[] { 1, 2, 3 }));
 	}
+
+	@Test
+	public void mergeSortedArraysTestWithBuffer() {
+		final int[] arrayWithBuffer1 = new int[6];
+		for (int i = 0; i < 3; ++i) {
+			arrayWithBuffer1[i] = i * 2;
+		}
+
+		final int[] array = new int[] { 3, 4, 5 };
+		final int returnedArray1[] = this.obj.mergeSortedArraysWithBuffer(arrayWithBuffer1, array);
+		assertTrue(Arrays.equals(returnedArray1, new int[] { 0, 2, 3, 4, 4, 5 }));
+	}
 }
